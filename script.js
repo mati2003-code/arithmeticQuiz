@@ -75,5 +75,6 @@ function displayFinalResult() {
     finalResultDiv.innerHTML = `
     <div class="${colorClass}">Otrzymałeś ${correctAnswers}/${totalQuestions} pkt co stanowi ${score.toFixed(2)}%
     </div>`;
+    finalResultDiv.classList.add("box-final-result-background")
     playAgain.innerHTML = "Odśwież stronę aby zagrać ponownie."
 }
