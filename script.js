@@ -38,6 +38,11 @@ function checkAnswer() {
     const userAnswer = document.getElementById('answer').value;
     const resultsDiv = document.getElementById('results');
     let resultText;
+
+    if(userAnswer === "") {
+        return;
+    }
+    
     if (userAnswer == currentQuestion.answer) {
         correctAnswers++;
         resultText = `<div class="correct">${numQuestions + 1}. ${currentQuestion.question} = ${currentQuestion.answer} (Twoja odpowiedź: ${userAnswer})</div>`;

@@ -6,6 +6,9 @@ body {
     background: linear-gradient(38deg, rgba(80,78,78,1) 0%, rgba(159,135,17,0.5061425061425062) 100%);
     background-repeat: no-repeat;
 }
+.box {
+    border: 1px solid white;
+}
 .question {
     color: aliceblue;
     font-weight: 700;
@@ -34,14 +37,22 @@ body {
     background-color: rgb(25, 96, 218);
     color: wheat;
     border: none;
+    box-shadow: 0px 0px 5px 0px white;
     border-radius: 4px;
     cursor: pointer;
+    transition-duration: .3s;
 }
+.check-btn:hover {
+    background-color: white;
+    color: blue;
+}
+
 .result {
-    background-color: rgba(255, 255, 255, 0.697);
     font-size: 18px;
     padding: 10px;
     margin: 10px;
+    background-color: rgba(240, 255, 255, 0.801);
+    box-shadow: 0px 0px 6px 0px rgb(255, 255, 255);
     border-radius: 4px;
 }
 .correct {
