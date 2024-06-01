@@ -39,10 +39,10 @@ function checkAnswer() {
     const resultsDiv = document.getElementById('results');
     let resultText;
 
-    if(userAnswer === "") {
+    if(userAnswer === "" || numQuestions >= 10) {
         return;
     }
-    
+
     if (userAnswer == currentQuestion.answer) {
         correctAnswers++;
         resultText = `<div class="correct">${numQuestions + 1}. ${currentQuestion.question} = ${currentQuestion.answer} (Twoja odpowiedź: ${userAnswer})</div>`;
@@ -62,6 +62,7 @@ function checkAnswer() {
 
 function displayFinalResult() {
     const finalResultDiv = document.getElementById('final-result');
+    const playAgain = document.querySelector(".play-again")
     const score = (correctAnswers / totalQuestions) * 100;
     let colorClass;
     if (score > 70) {
@@ -71,5 +72,8 @@ function displayFinalResult() {
     } else {
         colorClass = 'red';
     }
-    finalResultDiv.innerHTML = `<div class="${colorClass}">Otrzymałeś ${correctAnswers}/${totalQuestions} pkt co stanowi ${score.toFixed(2)}%</div>`;
+    finalResultDiv.innerHTML = `
+    <div class="${colorClass}">Otrzymałeś ${correctAnswers}/${totalQuestions} pkt co stanowi ${score.toFixed(2)}%
+    </div>`;
+    playAgain.innerHTML = "Odśwież stronę aby zagrać ponownie."
 }
